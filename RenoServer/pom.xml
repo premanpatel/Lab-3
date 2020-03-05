@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cisc.udel.edu</groupId>
-	<artifactId>StarDustServer</artifactId>
+	<artifactId>RenoServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
@@ -49,12 +49,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>cisc.udel.edu</groupId>
-			<artifactId>StarDustBLL</artifactId>
+			<artifactId>RenoBLL</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>		
 			<groupId>cisc.udel.edu</groupId>
-			<artifactId>StarDustJabber</artifactId>
+			<artifactId>RenoJabber</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
