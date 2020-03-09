@@ -249,10 +249,53 @@ public class HandPoker extends Hand implements Comparable {
 		ArrayList<HandPoker> CombinationHands = new ArrayList<HandPoker>();
 		Rule rle = this.getGP().getRle();
 		
+		int iMinPlayerCards = rle.getPlayerCardsMin();
+		int iMaxPlayerCards = rle.getPlayerCardsMax();
+		int iMinCommonCards = rle.getCommunityCardsMin();
+		int iMaxCommonCards = rle.getCommunityCardsMax();
+		
+		
 		//FIXME: Complete this method.  It's a tough one!
-
+		
+		for (int i =0; i< (iMaxPlayerCards - iMinPlayerCards + 1);i++   )
+		{
+		Iterator<int[]> iterPlayer = CombinatoricsUtils.combinationsIterator(iMinPlayerCards, iMaxPlayerCards- i);
+				
+			while(iterPlayer.hasNext()) {
+				
+				final int[] cmbPlayer = iterPlayer.next();
+				Iterator<int[]> iterCommon = CombinatoricsUtils.combinationsIterator(iMaxCommonCards, iMinCommonCards - i);
+						
+						while (iterCommon.hasNext()) {
+							ArrayList<Card> cards = new ArrayList<Card>();
+							final int[] cmbCommon = iterCommon.next();
+							
+							for (int iPlayerCard: cmbPlayer) {
+							cards.add(this.getCards().get(iPlayerCard));	
+							}
+							for (int iCommonCard: cmbCommon) {
+							//cards.add(this.getCards().get(iCommonCard));	
+							}
+									
+						}
+				
+					}
+			}
+				
+			
+			
 		return CombinationHands;
-	}
+			
+		
+		}
+
+		
+		
+
+		
+		
+		
+	
 
 	/**
 	 * @author BRG

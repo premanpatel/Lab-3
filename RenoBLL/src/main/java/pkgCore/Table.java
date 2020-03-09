@@ -1,6 +1,7 @@
 package pkgCore;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.UUID;
 
 public class Table {
@@ -55,7 +56,14 @@ public class Table {
 	 */
 	public void SetTablePlayers(ArrayList<Player> Players)
 	{
-		//FIXME: clear the table and add all the players.
+		
+		TablePlayers.clear();
+		
+		for (int i=0; i<Players.size()-1;i++)
+		{
+		TablePlayers.add(Players.get(i));		
+		}
+		
 	}
 	
 	/**
@@ -68,7 +76,8 @@ public class Table {
 	 */
 	public void AddPlayerToTable(Player player)
 	{
-		//FIXME: Add a player to the table
+		
+		TablePlayers.add(player);
 	}
 	
 	/**
@@ -82,7 +91,19 @@ public class Table {
 	public void RemovePlayerFromTable(Player p)
 	{
 		//FIXME: Remove a player from the table
+		
+		for (int i = 0;i<TablePlayers.size()-1;i++) {
+			
+			if (TablePlayers.get(i)==p) {
+			TablePlayers.remove(i);
+			break;
+										}
+			
+			}
 	}
+		
+		
+	
 	
 	/**
 	 * @author BRG
@@ -94,7 +115,7 @@ public class Table {
 	 */
 	public ArrayList<Player> getTablePlayers()
 	{
-		//FIXME: This should return the TablePlayers (don't return null).
+		
 		return TablePlayers;
 	}
 
