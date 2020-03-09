@@ -255,27 +255,30 @@ public class HandPoker extends Hand implements Comparable {
 		int iMaxCommonCards = rle.getCommunityCardsMax();
 		
 		
-		//FIXME: Complete this method.  It's a tough one!
 		
 		for (int i =0; i< (iMaxPlayerCards - iMinPlayerCards + 1);i++   )
 		{
-		Iterator<int[]> iterPlayer = CombinatoricsUtils.combinationsIterator(iMinPlayerCards, iMaxPlayerCards- i);
+		Iterator<int[]> iterPlayer = CombinatoricsUtils.combinationsIterator(iMaxPlayerCards, iMinPlayerCards + i);
 				
 			while(iterPlayer.hasNext()) {
 				
 				final int[] cmbPlayer = iterPlayer.next();
-				Iterator<int[]> iterCommon = CombinatoricsUtils.combinationsIterator(iMaxCommonCards, iMinCommonCards - i);
+				Iterator<int[]> iterCommon = CombinatoricsUtils.combinationsIterator(iMaxCommonCards, iMaxCommonCards - i);
 						
 						while (iterCommon.hasNext()) {
 							ArrayList<Card> cards = new ArrayList<Card>();
 							final int[] cmbCommon = iterCommon.next();
 							
 							for (int iPlayerCard: cmbPlayer) {
-							cards.add(this.getCards().get(iPlayerCard));	
+							cards.add(this.getCards().get(iPlayerCard));
 							}
 							for (int iCommonCard: cmbCommon) {
-							//cards.add(this.getCards().get(iCommonCard));	
+							cards.add(this.getGP().getCommonCards().get(iCommonCard));	
 							}
+							
+							HandPoker hand = new HandPoker(this.getPlayer(),this.getGP(), cards);
+							
+							CombinationHands.add(hand);
 									
 						}
 				
