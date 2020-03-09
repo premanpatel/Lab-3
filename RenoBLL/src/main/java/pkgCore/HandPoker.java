@@ -278,7 +278,7 @@ public class HandPoker extends Hand implements Comparable {
 							
 							HandPoker hand = new HandPoker(this.getPlayer(),this.getGP(), cards);
 							
-							CombinationHands.add(hand); 
+							CombinationHands.add(hand);  
 									
 						}
 				
