@@ -120,7 +120,7 @@ public class Rule implements Serializable {
 			this.PlayerCardsMin = 2;
 			this.PlayerCardsMax = 2;
 			this.CommunityCardsMin = 3;
-			this.CommunityCardsMax = 5;
+			this.CommunityCardsMax = 3;
 			this.PossibleHandCombinations = 60;
 			this.hmCardDraw.put(eDrawCount.FIRST,
 					new CardDraw(eCardCount.Two, eCardDestination.PLAYER, eCardVisibility.ME));
