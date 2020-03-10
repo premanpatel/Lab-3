@@ -90,7 +90,6 @@ public class Table {
 	 */
 	public void RemovePlayerFromTable(Player p)
 	{
-		//FIXME: Remove a player from the table
 		
 		for (int i = 0;i<TablePlayers.size()-1;i++) {
 			
